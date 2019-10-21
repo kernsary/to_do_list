@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="./js/bundle.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>To do list</h1>
+    <form v-on:submit.prevent="saveNewItem">
+      <label for="item-text"></label>
+      <input id="new-item" type="text" v-model="newItem">
+      <input type="submit" value="Save item">
+    </form>
+    <ul>
+      <li v-for="item in todos">
+      <span>{{item}}</span>
+    </li>
+    </ul>
+  </div>
+</body>
+</html>
