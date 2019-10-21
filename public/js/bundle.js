@@ -150,7 +150,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: \"#app\",\n    data: {\n      todos: [\n        \"Buy shopping\",\n        \"Clean bathroom\",\n        \"Car MOT\"\n      ],\n      newItem: \"\"\n    },\n    methods: {\n      saveNewItem: function(){\n        this.todos.push(this.newItem);\n        this.newItem = \"\"\n      }\n    }\n  });\n})\n\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.esm.js\");\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n  new vue__WEBPACK_IMPORTED_MODULE_0__[\"default\"]({\n    el: \"#app\",\n    data: {\n      todos: [\n        {name: \"Buy shopping\", priority: \"high\"},\n        {name: \"Clean bathroom\", priority: \"low\"},\n        {name: \"Car MOT\", priority: \"high\"}\n      ],\n      newName: \"\",\n      newPriority: \"\"\n    },\n    methods: {\n      saveNewItem: function(){\n        const newItem = {\n          name: this.newName,\n          priority: this.newPriority\n        }\n        this.todos.push(newItem);\n        this.newName = \"\";\n        this.newPriority = \"\"\n      }\n    }\n  });\n})\n\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 

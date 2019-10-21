@@ -5,16 +5,22 @@ document.addEventListener('DOMContentLoaded', () => {
     el: "#app",
     data: {
       todos: [
-        "Buy shopping",
-        "Clean bathroom",
-        "Car MOT"
+        {name: "Buy shopping", priority: "high"},
+        {name: "Clean bathroom", priority: "low"},
+        {name: "Car MOT", priority: "high"}
       ],
-      newItem: ""
+      newName: "",
+      newPriority: ""
     },
     methods: {
       saveNewItem: function(){
-        this.todos.push(this.newItem);
-        this.newItem = ""
+        const newItem = {
+          name: this.newName,
+          priority: this.newPriority
+        }
+        this.todos.push(newItem);
+        this.newName = "";
+        this.newPriority = ""
       }
     }
   });

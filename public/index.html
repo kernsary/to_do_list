@@ -11,12 +11,16 @@
     <h1>To do list</h1>
     <form v-on:submit.prevent="saveNewItem">
       <label for="item-text"></label>
-      <input id="new-item" type="text" v-model="newItem">
+      <input id="new-item-name" type="text" v-model="newName">
+      <input type="radio" id="high" value="high" v-model="newPriority">
+      <label for="high"class="high-priority">High</label>
+      <input type="radio" id="low" value="low" v-model="newPriority">
+      <label for="low" class="low-priority">Low</label>
       <input type="submit" value="Save item">
     </form>
     <ul>
-      <li v-for="item in todos">
-      <span>{{item}}</span>
+      <li v-for="item in todos" v-bind:class="item.priority === 'high' ? 'high-priority': 'low-priority'">
+      <span>{{item.name}}</span>
     </li>
     </ul>
   </div>
